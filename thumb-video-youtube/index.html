@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    li{
+        display: inline-block;
+        width: 20%;
+        background-color: red;
+        padding: 1em;
+        margin: .3em;
+        text-align: center;
+        cursor: pointer;
+    }
+    </style>
+    <section>
+        <aside class="container-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/42k5uL_dIOs" frameborder="0" allow="autoplay; encrypted-media" class="cnt-video" allowfullscreen></iframe>
+        </aside>
+        <aside class="container-thumbs-videos">
+            <ul>
+                <li class="thumb" data-url='42k5uL_dIOs'>Video 1</li>
+                <li class="thumb" data-url='MQEkFppWaRI'>Video 2</li>
+                <li class="thumb" data-url='YRMPRKkX0GM'>Video 3</li>
+                <li class="thumb" data-url='5EOiIzho51g'>Video 4</li>
+            </ul>
+        </aside>
+    </section>
+    <script>
+        var video = document.querySelector('.cnt-video');
+        var thumbs= document.querySelectorAll('.thumb');
+        
+        for(var i = 0; i<thumbs.length; i++){
+            thumbs[i].addEventListener('click', function(){
+                video.src = 'https://www.youtube.com/embed/' + this.getAttribute('data-url');
+            });
+        }
+    </script>
+</body>
+</html>
