@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container-calculadora{
+            width: 20%;
+            height: 400px;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #dadada;
+            box-shadow: 2px 2px 2px #c2c2c2;
+        }
+        .display{
+            padding: 2rem;
+            background-color: #84bd9e;
+            color: #fff;
+            margin: 1rem;
+            text-align: right;
+        }
+        
+        .tecla{
+            display: inline-block;
+            width: 30.33%;
+            margin: 1.5%;
+            text-align: center;
+            padding: 1rem 0;
+            box-shadow: 0px 0px 3px #c2c2c2;
+            color: gray;
+            cursor: pointer;
+        }
+    </style>
+    <div class="container-calculadora">
+        <div class="display">0</div>
+        <ul class="teclas"></ul>
+    </div>
+    <script>
+        var display = document.querySelector('.display');
+
+        criaTeclas();   
+        
+        function criaTeclas(){
+            var numeros = 9;
+            var containerTeclas = document.querySelector('.teclas')
+
+            for(var i = 0; i<=numeros; i++){
+                var tecla = document.createElement('li');
+                tecla.textContent = i;
+                tecla.classList.add('tecla');
+                containerTeclas.insertBefore(tecla, containerTeclas.childNodes[0]);
+            }
+        }        
+        function resetDisplay(){
+            if(display.innerHTML == 0){
+                display.innerHTML = '';
+            }
+        }
+
+        var teclas = document.querySelectorAll('.tecla');
+        var numero = null;
+
+        teclas[0].addEventListener('click',function(){
+            resetDisplay()
+            display.innerHTML += this.textContent;
+        })
+        teclas[1].addEventListener('click',function(){
+            resetDisplay()
+            display.innerHTML += this.textContent;
+        })
+        
+    </script>
+</body>
+</html>
