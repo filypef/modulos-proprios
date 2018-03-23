@@ -1,0 +1,182 @@
+<link rel="stylesheet" href="http://www.natura.com.br/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" />
+<link rel="stylesheet" href="http://www.natura.com.br/sites/default/files/css/css_umnfL8RPIyJarj4XGlvgckmJkPKMvnjUPckf0usWHgI.css" />
+<link rel="stylesheet" href="http://www.natura.com.br/sites/default/files/css/css_kLuskQUzJ1GzDAxAAZAoyddft_Z_6ESTwnBYzHx0yDE.css" />
+<link rel="stylesheet" href="http://www.natura.com.br/sites/default/files/css/css_lLtba19w1DFHsUPm-yyLN76nWZZCzk1dBaa7AwWm9Ks.css" />
+<link rel="stylesheet" href="http://www.natura.com.br/sites/default/files/css/css_-T-73ra8NIrjZu7xFWscJgsSwbk7gF8zv0el4G9Riz4.css" />
+<script src="http://www.natura.com.br/sites/default/files/js/js_gPM6NXOQjN2XM2JWQGfy07nKmcdDFrL289YA7h80ySs.js"></script>
+<script src="http://www.natura.com.br/sites/default/files/js/js_wilRHyxGYrVJG37iDBEhKalnG1GrTLho62-Jj8SKRUU.js"></script>
+<script src="http://www.natura.com.br/sites/default/files/js/js_1CsMfdhl4LxXuuxpXGiCu_TZrCpMeOQUBDmz2Lc4fdk.js"></script>
+<script src="http://www.natura.com.br/sites/default/files/js/js_3HUEbK_jw1l04nEqgBKizssvH5yMtaHFfw-83dDLlvk.js"></script>
+<script src="http://www.natura.com.br/sites/default/files/js/js_HbE2XwzjmAgINxgddfJIkmp_TqZJiMR223hyz8f84-0.js"></script>
+<script src="http://www.natura.com.br/sites/default/files/js/js_ivGd9sxCWokOzd3rlDeewGxGWjjMDeSi52dYZef2bDU.js"></script>
+<script src="http://www.natura.com.br/sites/default/files/js/js_SCfYqiJbJMluJd-a7utgsVHyRcEk3TYV-OjBBeq6YTc.js"></script>
+<script src="http://www.natura.com.br/sites/default/files/js/js_3sVFQiGA9XxBXUyEU153anD_cytep6n618EALjrgE3U.js"></script>
+
+
+<link rel="stylesheet" href="css/estilos.css">
+
+
+<div id="container-mapa">
+    <div class="row">
+        <div class="col-md-12 mapa">
+            <nav>
+                <ul id="menu-mapa"></ul>
+            </nav>
+            <section id="container-estados"></section>
+        </div>
+        <div class="col-md-12"></div>
+    </div>
+</div>
+
+
+<script>
+    var estados = [
+        {
+            'estado' : 'Piauí',
+            'nomeMapa' : 'Barra Grande (PI)',
+            'tituloPraia' : 'Barra Grande',
+            'textoInformacoes' : 'Praia dos ventos alísios, Barra Grande é um verdadeiro celeiro de campeões do kitesurfe. De lá saiu Manoel Piçarrinha, vice-campeão mundial júnior da modalidade.',
+            'textoBotao' : ''
+        },
+        {
+            'estado' : 'Piauí',
+            'nomeMapa' : 'Luís Correia (PI)',
+            'tituloPraia' : 'Luís Correia',
+            'textoInformacoes' : 'Colada no delta do Parnaíba, Luís Correia é conhecida como o "Havaí brasileiro". A cidade costuma sediar etapas do Campeonato Brasileiro de kitesurfe.',
+            'textoBotao' : ''
+        },
+        {
+            'estado' : 'Ceará',
+            'nomeMapa' : 'Jericoacoara (CE)',
+            'tituloPraia' : 'Jericoacoara',
+            'textoInformacoes' : 'Local das praias mais famosas, é o pico mais conhecido do kitesurfe no Brasil. Com grande apelo turístico, atrai praticantes do esporte de todo o mundo.',
+            'textoBotao' : ''
+        },
+        {
+            'estado' : 'Ceará',
+            'nomeMapa' : 'Cruz (CE)',
+            'tituloPraia' : 'Cruz',
+            'textoInformacoes' : 'Apenas 12km distante de Jeri, Cruz tem a famosa Praia do Preá, uma das mais conhecidas dos praticantes de kitesurfe no país.',
+            'textoBotao' : ''
+        },
+        {
+            'estado' : 'Rio Grande do Norte',
+            'nomeMapa' : 'São Miguel do Gostoso (RN)',
+            'tituloPraia' : 'São Miguel do Gostoso',
+            'textoInformacoes' : 'Bem próxima à ponta do "cotovelo" do Brasil, atrai ventos fortes e é uma das praias com mais adeptos do kitesurfe. Recebe muitos projetos e competições do esporte.',
+            'textoBotao' : ''
+        },
+        {
+            'estado' : 'Rio Grande do Norte',
+            'nomeMapa' : 'Touros (RN)',
+            'tituloPraia' : 'Touros',
+            'textoInformacoes' : 'Bem próxima à ponta do "cotovelo" do Brasil, atrai ventos fortes e é uma das praias com mais adeptos do kitesurfe. Recebe muitos projetos e competições do esporte.',
+            'textoBotao' : ''
+        },
+        {
+            'estado' : 'Rio Grande do Norte',
+            'nomeMapa' : 'Barra do Cunhaú (RN)',
+            'tituloPraia' : 'Barra do Cunhaú',
+            'textoInformacoes' : 'Em um dos pontos mais à leste do país, também conta com ventos fortes durante quase todo o ano. Como todo o Nordeste, atrai muitos turistas e iniciantes no kitesurfe.',
+            'textoBotao' : ''
+        },
+        {
+            'estado' : 'Espírito Santo',
+            'nomeMapa' : 'Guarapari (ES)',
+            'tituloPraia' : 'Guarapari',
+            'textoInformacoes' : 'O mar é um pouco mais agitado que a capital Vitória, pois possui mais ventos. Com boa estrutura de escolas, é indicado tanto para iniciantes como atletas.',
+            'textoBotao' : ''
+        },
+        {
+            'estado' : 'Espírito Santo',
+            'nomeMapa' : 'Vitória (ES)',
+            'tituloPraia' : 'Vitória',
+            'textoInformacoes' : 'A capital capixaba é outro pico famoso pela prática do kitesurfe. As condições de clima, vento e segurança são ideais em boa parte do ano. É propícia para os iniciantes no esporte.',
+            'textoBotao' : ''
+        },
+        {
+            'estado' : 'Rio de Janeiro',
+            'nomeMapa' : 'Arraial do Cabo (RJ)',
+            'tituloPraia' : 'Arraial do Cabo',
+            'textoInformacoes' : 'Ponto mais ao leste do Rio de Janeiro, na ponta da Região dos Lagos, atrai ventos fortes que, junto com a beleza natural, fazem a cidade receber muitos praticantes do kitesurfe.',
+            'textoBotao' : ''
+        },
+        {
+            'estado' : 'Rio de Janeiro',
+            'nomeMapa' : 'Araruama (RJ)',
+            'tituloPraia' : 'Araruama',
+            'textoInformacoes' : 'As águas calmas e os bons ventos de Araruama, Arubinha e Praia Seca atraem muitos iniciantes, nas escolas mais antigas de kitesurfe do país.',
+            'textoBotao' : ''
+        },
+        {
+            'estado' : 'Rio de Janeiro',
+            'nomeMapa' : 'Rio de Janeiro (RJ)',
+            'tituloPraia' : 'Rio de Janeiro',
+            'textoInformacoes' : 'Os bons ventos e a estrutura da cidade grande proporcionam o ambiente perfeito para os iniciantes no kitesurfe, principalmente na Praia do Pepê.',
+            'textoBotao' : ''
+        },
+        {
+            'estado' : 'Santa Catarina',
+            'nomeMapa' : 'Florianópolis (SC)',
+            'tituloPraia' : 'Florianópolis',
+            'textoInformacoes' : 'Com ótimas condições de vento, principalmente o norte, a Ilha de Florianópolis possui muitos praticantes de kitesurfe desde o surgimento do esporte. Indicado para iniciantes e atletas.',
+            'textoBotao' : ''
+        }
+    ]
+
+    criaMenu();
+    criaCard();
+
+    function criaMenu(){
+        var ul = document.querySelector('#menu-mapa');
+        for(var i = 0; i < estados.length; i++){
+            var li = document.createElement('li');
+            li.classList.add('estados');
+            li.innerHTML = estados[i].nomeMapa;
+            ul.appendChild(li);
+        }
+    }
+
+    function criaCard(){
+        var containerDadosEstados = document.querySelector('#container-estados');
+        for(var i = 0; i < estados.length; i++){
+            var aside = document.createElement('aside');
+            aside.classList.add('card');
+            aside.classList.add('invisivel');
+
+            var dadosEstado = criaDadosEstados(i);
+            
+
+
+            var nomeEstado = document.createElement('h2');
+            nomeEstado.innerHTML = dadosEstado[0].nomeEstado;
+
+            var praia = document.createElement('p');
+            praia.innerHTML = dadosEstado[0].titulo;
+            
+            var informacoes = document.createElement('p');
+            informacoes.innerHTML = dadosEstado[0].informacoes;
+
+            var botao = document.createElement('a');
+            botao.innerHTML = dadosEstado[0].botao;
+            
+            aside.appendChild(nomeEstado);
+            aside.appendChild(praia);
+            aside.appendChild(informacoes);
+            aside.appendChild(botao);
+
+            containerDadosEstados.appendChild(aside);
+        }
+    }
+
+    function criaDadosEstados(index){
+        var estado = [{
+            'nomeEstado' : estados[index].estado,
+            'titulo' : estados[index].tituloPraia,
+            'informacoes' : estados[index].textoInformacoes,
+            'botao' : estados[index].textoBotao
+        }]
+        console.log(estado);
+        return estado;
+    }
+</script>

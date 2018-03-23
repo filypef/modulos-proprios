@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    var questoes = [
+        {
+            'tituloQuestao':'Qual é a ocasião que você procura?',
+            'tipoPresente': ['aniversario', 'presente', 'pais']
+        },{
+            'tituloQuestao':'Qual é o seu sexo?',
+            'sexo': ['Masculino', 'Feminino']
+        },{
+            'tituloQuestao':'Qual é o seu nome',
+            'sexo': ['Pedro', 'FIylpe']
+        }
+    ]
+
+    for(var i = 0; i < questoes.length; i++){
+        console.log(questoes[i]);
+        if(i == 0){
+            for(var j = 0; j < questoes[i].tipoPresente.length; j++){
+                console.log(questoes[i].tipoPresente[j]);
+            }
+        }else{
+            for(var j = 0; j < questoes[i].sexo.length; j++){
+                console.log(questoes[i].sexo[j]);
+            }
+        }
+    }
+</script>
+
+<script>
+    var dataLayer = [{
+    "pageType":"home",
+    "consultant":{"franchiseType":"CND","id":"141692103","classification":{"role":"1","rating":4.4},"name":"Natura Cosméticos S A","shopUrl":"http://rede.natura.net/espaco/default"},
+    "breadCrumb":[{"name":"home","url":"http://rede.natura.net"}],
+    "shelf":[
+      {"position":1,"id":"pid41808","category":["Promoções"],"originalPrice":189.9,"name":"Deo Parfum Essencial Exclusivo Feminino - 100ml","brand":"Essencial","quantity":1,"list":"Vitrine de Produtos","salePrice":94.95,"rating":4.8,"available":true,"variant":{}},
+      {"position":2,"id":"pid63372","category":["Promoções"],"originalPrice":99.9,"name":"Desodorante Colônia Humor a Dois Masculino - 75ml","brand":"Humor","quantity":1,"list":"Vitrine de Produtos","salePrice":49.95,"rating":4.7,"available":true,"variant":{}},
+      {"position":3,"id":"pid13120","category":["Promoções"],"originalPrice":114.9,"name":"Desodorante Colônia Kaiak Feminino - 100ml","brand":"Kaiak","quantity":1,"list":"Vitrine de Produtos","salePrice":57.45,"rating":4.9,"available":true,"variant":{}},
+      {"position":4,"id":"pid58418","category":["Promoções"],"originalPrice":79.9,"name":"Desodorante Colônia Frescor Maracujá Ekos Feminino - 150ml","brand":"Ekos","quantity":1,"list":"Vitrine de Produtos","salePrice":39.95,"rating":4.8,"available":true,"variant":{}}
+    ],
+    "visitor":{"timestamp":0,"id":"1730046580","age":0,"isLoggedIn":false,"device":"COMPUTER","type":"cf"}
+  }]
+
+    console.log(dataLayer[0])
+</script>

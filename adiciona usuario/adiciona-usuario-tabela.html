@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Mina" rel="stylesheet">
+</head>
+<body>
+    <style>
+        body{
+            font-family: 'Mina', sans-serif;
+        }
+        h1{
+            text-align: center;
+        }
+        .container-dados{
+            text-align: center;
+        }
+        .container-dados:nth-of-type(2){
+            margin-top: 1rem;
+        }
+        input{
+            border: 1px solid #8a2be2;
+            padding: .2rem;
+            outline: none;
+            transition: background-color .3s ease;
+        }
+        input:hover,
+        input:focus{
+            background-color: rgba(222, 184, 135, .5);
+        }
+        #btn-cadastra{
+            border: 0;
+            background-color: #ae72e7;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 10px;
+            transition: background-color 1s ease;
+            outline: none;
+            cursor: pointer;
+            display: block;
+            margin: 1rem auto;
+        }
+        #btn-cadastra:hover{
+            background-color: #8a2be2;
+        }
+        #tabela-usuario{
+            margin: 0 auto;
+            border: 1px dashed #c2c2c2;
+        }
+        #tabela-usuario th{
+            background-color: #8a2be2;
+            color: #fff;
+            padding: 2px 30px;
+        }
+        #tabela-usuario td{
+            border: 1px dashed #c2c2c2;
+            padding: 0 20px;
+        }
+        #tabela-usuario tr:nth-child(even){
+            background-color: #c2c2c2;
+        }
+        #mensagem-erro{
+            color: #8b0000;
+            text-align: center
+        }
+        #mensagem-erro li{
+            list-style-type: none;
+        }
+    </style>
+
+    <h1>Cadastro de usuários</h1>
+
+    <ul id="mensagem-erro"></ul>
+    <form action="#" id="formulario-usuario">
+        <div class="container-dados">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome">
+        </div>
+        
+        <div class="container-dados">
+            <label for="email">E-mail:</label>
+            <input type="text" name="email" id="email">
+        </div>
+
+        <button id="btn-cadastra">Cadastrar</button>
+    </form>
+
+    <table id="tabela-usuario">
+        <thead>
+            <th>Nome</th>
+            <th>E-mail</th>
+        </thead>
+    </table>
+
+    <script>
+        //recupera o elemento botao    
+        var btn = document.querySelector('#btn-cadastra');
+
+        //escuta de evento click no botao
+        btn.addEventListener('click', function(e){
+            
+            //reset evento default button submit
+            e.preventDefault();
+
+            //recupera formulario
+            var form = document.querySelector('#formulario-usuario');
+            
+            //recupera lista de erros
+            var msgErro = document.querySelector('#mensagem-erro')
+            
+            //Cria um objeto usuario com o dados preenchidos no formulario e obtem o retorno desse objeto
+            var usuario = criaUsuario(form);
+            
+            //Recebe um array de erros com a validação dos campos
+            var erros  = validaCampos(usuario);
+            
+            //Verifica se possui alguma mensagem de erro no array
+            if(erros.length == 0){
+                //limpa mensagem de erro na lista
+                msgErro.innerHTML = '';
+                //cria uma tr com os dados do usuario
+                var usuarioTr = criaTr(usuario);
+                //reseta as informações do input
+                form.reset();
+            }else {
+                //limpa mensagem de erro na lista
+                msgErro.innerHTML = '';
+                //cria lista dinamica com as mensagens de erro
+                for(var i = 0; i < erros.length; i++){
+                    //cria li
+                    var li = document.createElement('li');
+                    //adiciona mensagem de erro na li
+                    li.textContent = erros[i];
+                    //adicionna li de erro na lista
+                    msgErro.appendChild(li);
+                }
+            }
+            
+            //cria usuario recebendo os campos do formulario via parametro
+            function criaUsuario(formulario){
+                //criando objeto usuario
+                var usuario = {
+                    nome : formulario.nome.value,
+                    email : formulario.email.value
+                }
+                //retornando dados do usuario
+                return usuario
+            }
+
+            //cria tr recebendo os dados do usuario via o objeto usuario
+            function criaTr(usuario){
+                //cria tr
+                var tr = document.createElement('tr');
+                
+                //cria td com o nome do usuario
+                var nomeTd = criaTd(usuario.nome);
+
+                //cria td com o email do usuario
+                var emailTd = criaTd(usuario.email);
+                
+                //adiciona tds dentro da tr
+                tr.appendChild(nomeTd);
+                tr.appendChild(emailTd);
+
+                //recupera tabela
+                var tabela = document.querySelector('#tabela-usuario');
+                
+                //adiciona tr dentro da tabela
+                tabela.appendChild(tr);
+            }
+            
+            //cria td recebemos o dados do usuário
+            function criaTd(dados){
+                //cria td
+                var td = document.createElement('td');
+                //adiciona dados do usuario na td
+                td.textContent = dados;
+                //retorna td criada
+                return td;
+            }
+            
+            //valida campos recebendo objeto do usuario
+            function validaCampos(usuario){
+                //cria array
+                var erros = [];
+                
+                //verifica nome do usuário está preenchido
+                if(usuario.nome.length == 0){
+                    erros.push('A altura não pode ser vazia');
+                }
+                 //verifica nome do usuário está preenchido
+                if(usuario.email.length == 0){
+                    erros.push('O e-mail não pode ser vazio');
+                }
+                //retorna array com mensagens de erro
+                return erros;
+            }
+        })
+    </script>
+
+</body>
+</html>

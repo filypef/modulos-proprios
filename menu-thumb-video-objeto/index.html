@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container-video">
+
+    </div>
+    <nav>
+        <ul class="menu-videos">
+        </ul>
+    </nav>
+
+    <script>
+    
+        var videos = [
+            {
+                'thumbVideo' : 'https://img.cancaonova.com/cnimages/canais/uploads/sites/15/2018/03/Thumb-Playlist-19-200x200.png',
+                'url' : '#video1'
+            },
+            {
+                'thumbVideo' : 'https://img.cancaonova.com/cnimages/canais/uploads/sites/15/2018/03/Thumb-Playlist-18-200x200.png',
+                'url' : '#video2'
+            }
+        ]
+        console.log(videos.length);    
+
+        for(var i = 0; i < videos.length; i++){
+            var img = document.createElement('img');
+            img.src = videos[i].thumbVideo;
+            
+            var li  = document.createElement('li');
+            
+            var a = document.createElement('a');
+            a.href = videos[i].url;
+
+            a.appendChild(img);
+            li.appendChild(a);
+
+            var menu = document.querySelector('.menu-videos');
+
+            menu.appendChild(li);
+
+
+            li.addEventListener('click', function(){
+                 menu.removeChild(this);
+            })
+        }
+
+    </script>
+</body>
+</html>
